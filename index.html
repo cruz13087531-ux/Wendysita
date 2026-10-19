@@ -1,650 +1,626 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#1b1025" />
-  <meta name="description" content="Una carta especial con un diseño kawaii gótico inspirado en Kuromi." />
-  <title>Una cartita especial ♡</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap');
-    :root {
-      color-scheme: dark;
-      --pink:#ffc0e6;
-      --pink-2:#ff94d0;
-      --lilac:#c6a2ff;
-      --lilac-2:#ae86f4;
-      --ink:#160f20;
-      --paper:#fff9ff;
-      --soft:#f7eaff;
-      --line:#f1c5ff55;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Una cartita para ti ♡ | Kuromi</title>
 
-    * { box-sizing:border-box; }
-    html { min-height:100%; scroll-behavior:smooth; }
-    body {
-      min-height:100vh;
-      margin:0;
-      font-family:'DM Sans',system-ui,sans-serif;
-      color:#fff;
-      overflow-x:hidden;
-      background:
-        radial-gradient(ellipse 85% 65% at 50% 42%,#47285c 0%,#261730 58%,#140e1d 100%);
-    }
-    body::before {
-      content:"";
-      pointer-events:none;
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      opacity:.5;
-      background-image:
-        radial-gradient(circle at 8% 15%,#ffd8f4 0 1.5px,transparent 2px),
-        radial-gradient(circle at 80% 9%,#d6b4ff 0 2px,transparent 3px),
-        radial-gradient(circle at 62% 70%,#ffc0e6 0 1px,transparent 2px),
-        radial-gradient(circle at 17% 81%,#fff 0 1px,transparent 2px);
-      background-size:230px 250px,320px 330px,170px 210px,190px 230px;
-      animation:sky 22s linear infinite;
-    }
-    body::after {
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      background:
-        linear-gradient(transparent 0 96%, #ffffff08 96% 100%),
-        linear-gradient(90deg, transparent 0 96%, #ffffff06 96% 100%);
-      background-size:26px 26px;
-      mask-image:radial-gradient(circle at center, black 25%, transparent 90%);
-      opacity:.22;
-    }
-    @keyframes sky {
-      from { background-position:0 0,0 0,0 0,0 0 }
-      to { background-position:65px 80px,-45px 90px,45px -40px,-25px 60px }
-    }
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Italianno&display=swap" rel="stylesheet">
 
-    button { font:inherit; cursor:pointer; }
-    button:focus-visible { outline:3px solid #ffb9e8; outline-offset:5px; }
+<style>
+:root {
+  --rosa: #ffbee8;
+  --lila: #cfabff;
+  --oscuro: #201228;
+}
 
-    .app {
-      min-height:100svh;
-      display:grid;
-      place-items:center;
-      padding:28px 18px 38px;
-      isolation:isolate;
-      position:relative;
-    }
+* { box-sizing: border-box; }
 
-    .spark {
-      position:fixed;
-      pointer-events:none;
-      opacity:.65;
-      filter:drop-shadow(0 0 8px #ffb7ec);
-      animation:twinkle var(--speed,4s) ease-in-out infinite alternate;
-      z-index:-1;
-    }
-    .spark:nth-child(1) { left:9%; top:16%; --speed:4.2s; font-size:20px }
-    .spark:nth-child(2) { right:12%; top:28%; --speed:3.5s; font-size:26px }
-    .spark:nth-child(3) { right:22%; bottom:9%; --speed:5s; font-size:18px }
-    .spark:nth-child(4) { left:19%; bottom:17%; --speed:4.7s; font-size:24px }
-    .spark:nth-child(5) { left:48%; top:9%; --speed:4.9s; font-size:20px }
-    .spark:nth-child(6) { right:8%; bottom:30%; --speed:4.4s; font-size:22px }
-    @keyframes twinkle {
-      from { opacity:.18; transform:translateY(0) scale(.8) rotate(-8deg) }
-      to { opacity:1; transform:translateY(-16px) scale(1.12) rotate(9deg) }
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: white;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    #533064 0%, #2a1935 55%, #170e20 100%
+  );
+}
 
-    .view { width:min(100%,900px); text-align:center; }
-    .intro { display:grid; justify-items:center; animation:reveal .7s ease both; }
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .4;
+  background-image:
+    radial-gradient(#ffc7ec 1.5px, transparent 2px),
+    radial-gradient(#d8b9ff 1.2px, transparent 2px);
+  background-size: 145px 160px, 230px 195px;
+  background-position: 20px 40px, 90px 75px;
+  animation: cielo 20s linear infinite;
+}
 
-    .mini-label {
-      text-transform:uppercase;
-      letter-spacing:.36em;
-      font-size:11px;
-      font-weight:700;
-      color:#e8b7fa;
-      margin:10px 0 8px;
-    }
+@keyframes cielo {
+  to { background-position: 170px 200px, -140px 270px; }
+}
 
-    .hero-badge {
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:8px 15px;
-      border-radius:999px;
-      background:linear-gradient(180deg,#ffffff18,#ffffff08);
-      border:1px solid #f0c3ff3d;
-      box-shadow:0 10px 24px #00000022, inset 0 1px 0 #ffffff18;
-      font-size:12px;
-      color:#f3dfff;
-      margin-bottom:12px;
-      backdrop-filter:blur(10px);
-    }
+main {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 30px 14px 45px;
+}
 
-    h1 {
-      margin:0;
-      font-family:'Italianno', 'Brush Script MT',cursive;
-      font-weight:400;
-      font-size:clamp(56px,10vw,92px);
-      line-height:1.1;
-      text-shadow:0 4px 28px #da7bbf7a;
-    }
+.pantalla {
+  width: min(100%, 760px);
+  animation: entrada .7s both;
+}
 
-    .subtitle {
-      margin:5px 0 18px;
-      font-size:14px;
-      color:#e8d8f2;
-      letter-spacing:.025em;
-      max-width:620px;
-    }
+[hidden] { display: none !important; }
 
-    .kuromi-tags {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:10px;
-      margin-bottom:24px;
-    }
-    .kuromi-tags span {
-      padding:8px 12px;
-      font-size:12px;
-      border-radius:999px;
-      background:linear-gradient(180deg,#ffffff17,#ffffff0a);
-      border:1px solid #f3c8ff48;
-      color:#f6e5ff;
-      box-shadow:0 8px 18px #00000020;
-    }
+@keyframes entrada {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .envelope-button {
-      border:0;
-      background:none;
-      padding:30px 12px 22px;
-      width:min(90vw,430px);
-      filter:drop-shadow(0 24px 40px #0009);
-      transition:transform .4s cubic-bezier(.2,.7,.2,1);
-    }
-    .envelope-button:hover { transform:translateY(-10px) rotate(-1deg); }
-    .envelope-button:active { transform:scale(.97); }
+.titulo {
+  font: 400 clamp(59px, 9vw, 92px)/1.03 'Italianno', cursive;
+  margin: 12px 0 8px;
+  text-shadow: 0 5px 22px #f9a4e077;
+}
 
-    .envelope {
-      position:relative;
-      display:block;
-      width:100%;
-      aspect-ratio:1.58;
-      perspective:700px;
-    }
+.subtitulo {
+  font-size: 14px;
+  color: #eddaef;
+  margin: 8px auto 20px;
+  max-width: 520px;
+}
 
-    .kuromi-ears {
-      position:absolute;
-      inset:-14px 34px auto 34px;
-      height:86px;
-      pointer-events:none;
-    }
-    .ear {
-      position:absolute;
-      top:0;
-      width:84px;
-      height:84px;
-      background:linear-gradient(180deg,#16111f,#2a1b31);
-      border:3px solid #3c2a49;
-      border-radius:8px 60px 10px 60px;
-      box-shadow:0 8px 18px #0005;
-    }
-    .ear.left {
-      left:12px;
-      transform:rotate(-27deg);
-      transform-origin:30% 88%;
-    }
-    .ear.right {
-      right:12px;
-      transform:scaleX(-1) rotate(-27deg);
-      transform-origin:30% 88%;
-    }
-    .ear::after {
-      content:"";
-      position:absolute;
-      inset:16px 18px 24px 18px;
-      border-radius:8px 40px 8px 40px;
-      background:linear-gradient(180deg,#f2b2df,#bc80d4);
-      opacity:.85;
-    }
+.distintivo {
+  display: inline-block;
+  border: 1px solid #e7b5f966;
+  border-radius: 100px;
+  padding: 9px 16px;
+  background: #ffffff14;
+  color: #f8dfff;
+  font-size: 12px;
+  margin: 12px 0;
+}
 
-    .letter-peek {
-      position:absolute;
-      background:#f8ebff;
-      border:5px solid #e7bbf5;
-      border-radius:8px 8px 4px 4px;
-      height:88%;
-      left:13%;
-      right:13%;
-      top:-13%;
-      display:grid;
-      place-content:start center;
-      padding-top:17px;
-      transform:translateY(22px);
-      transition:transform .5s;
-      box-shadow:inset 0 0 15px #cea7e499;
-    }
-    .letter-peek span { color:#8a4a97; font-size:32px; letter-spacing:.15em; }
-    .envelope-button:hover .letter-peek { transform:translateY(-5px); }
+.etiquetas {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 8px auto 22px;
+}
 
-    .envelope-back {
-      position:absolute;
-      inset:0;
-      background:#c18ec9;
-      border-radius:12px;
-      box-shadow:inset 0 4px 26px #7a4e84a8;
-      border:2px solid #f0cae530;
-    }
-    .envelope-front {
-      position:absolute;
-      inset:0;
-      background:linear-gradient(150deg,#ba7bb9 0%,#f3b8e3 42%,#d398ce 100%);
-      clip-path:polygon(0 0,50% 53%,100% 0,100% 100%,0 100%);
-      border-radius:9px;
-    }
-    .envelope-bottom {
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,#e4aee0,#f5c6e7);
-      clip-path:polygon(0 100%,50% 44%,100% 100%);
-      border-radius:9px;
-    }
-    .flap {
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,#edc3ec,#aa78bf);
-      clip-path:polygon(0 0,100% 0,50% 57%);
-      transform-origin:50% 0;
-      filter:drop-shadow(0 3px 2px #67446eaa);
-    }
-    .seal {
-      position:absolute;
-      left:50%; top:53%; transform:translate(-50%,-50%);
-      display:grid; place-items:center;
-      width:72px; height:72px; border-radius:50%;
-      background:radial-gradient(circle at 30% 20%,#ffdef3,#df70b4 62%,#993778 100%);
-      border:4px solid #ffd7ef;
-      box-shadow:0 5px 12px #6b316b9c, inset 0 0 0 3px #f3a2d4;
-      font-size:28px; text-shadow:0 2px 5px #aa4175;
-    }
-    .seal::after {
-      content:"🎀";
-      position:absolute;
-      top:-16px;
-      left:50%;
-      transform:translateX(-50%);
-      font-size:20px;
-      filter:drop-shadow(0 1px 2px #0004);
-    }
-    .tape {
-      position:absolute;
-      bottom:-14px; left:50%; transform:translateX(-50%) rotate(-3deg);
-      background:#1b1123; color:#efb5ff; padding:7px 18px;
-      white-space:nowrap; border-radius:4px; font-size:13px; letter-spacing:.12em;
-      box-shadow:0 3px 12px #05020899;
-    }
-    .skull-accent {
-      position:absolute;
-      top:16px;
-      left:50%;
-      transform:translateX(-50%);
-      font-size:20px;
-      z-index:2;
-      filter:drop-shadow(0 2px 4px #0005);
-    }
+.etiquetas span {
+  background: #ffffff12;
+  border: 1px solid #e7b5f944;
+  border-radius: 40px;
+  padding: 8px 11px;
+  font-size: 12px;
+}
 
-    .open-cta {
-      margin-top:4px;
-      display:inline-flex;
-      gap:9px;
-      align-items:center;
-      background:#f9c2e6;
-      color:#482e55;
-      border-radius:30px;
-      padding:12px 24px;
-      font-weight:700;
-      box-shadow:0 7px 25px #0004;
-    }
-    .tiny-note { font-size:12px; margin-top:15px; color:#bc9bc9 }
+/* PERSONAJES DE KUROMI */
 
-    .letter-view { display:none; justify-items:center; gap:14px; }
-    .letter-view.visible { display:grid; animation:reveal .65s ease both; }
-    .intro.hidden { display:none; }
-    @keyframes reveal {
-      from { opacity:0; transform:translateY(22px) scale(.97) }
-      to { opacity:1; transform:translateY(0) scale(1) }
-    }
+.personajes {
+  position: relative;
+  width: min(96vw, 460px);
+  height: 178px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .letter-tools {
-      width:min(100%,530px);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .back {
-      border:1px solid #e5bff559;
-      background:#ffffff12;
-      backdrop-filter:blur(12px);
-      color:#f9e8ff;
-      padding:10px 16px;
-      border-radius:50px;
-      font-size:13px;
-    }
-    .back:hover { background:#ffffff25; }
-    .letter-caption {
-      text-transform:uppercase;
-      letter-spacing:.24em;
-      font-size:10px;
-      font-weight:700;
-      color:#dfbbea;
-    }
+.personaje {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 9px 12px #0009);
+  animation: volar 4s ease-in-out infinite;
+}
 
-    .page-shell {
-      width:min(100%,530px);
-      background:#fffafa;
-      border-radius:9px;
-      box-shadow:0 35px 70px #0008,0 0 30px #e7a1f040;
-      position:relative;
-      aspect-ratio:561 / 701;
-      overflow:hidden;
-      animation:pageFloat 5s ease-in-out infinite;
-    }
-    .page-shell::before {
-      content:"";
-      position:absolute;
-      inset:10px;
-      border:1px solid #ffffff40;
-      border-radius:6px;
-      pointer-events:none;
-      z-index:1;
-    }
-    .page-art { position:absolute; inset:0; width:100%; height:100%; object-fit:fill; }
-    .message-layer {
-      position:absolute;
-      inset:21% 14% 16%;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      overflow:auto;
-      scrollbar-width:thin;
-      scrollbar-color:#d5a5db transparent;
-      z-index:2;
-    }
-    .message {
-      color:#533052;
-      font-family:Georgia,'Times New Roman',serif;
-      font-size:clamp(15px,2.3vw,19px);
-      line-height:1.8;
-      text-align:center;
-      white-space:pre-line;
-      overflow-wrap:anywhere;
-      max-height:100%;
-      margin:0;
-    }
-    .message.placeholder { opacity:.68; font-style:italic; }
-    .message:not(.placeholder)::after {
-      content:'♥';
-      display:block;
-      color:#b571bd;
-      font-size:20px;
-      margin-top:12px;
-    }
+.personaje.izquierda {
+  width: 139px;
+  height: 139px;
+  left: 0;
+  transform: rotate(-12deg);
+}
 
-    .quote-ribbon {
-      width:min(100%,530px);
-      display:flex;
-      justify-content:center;
-      gap:8px;
-      flex-wrap:wrap;
-      color:#efd8ff;
-      font-size:12px;
-    }
-    .quote-ribbon span {
-      padding:7px 11px;
-      border-radius:999px;
-      background:#ffffff10;
-      border:1px solid #ffffff1e;
-    }
+.personaje.derecha {
+  width: 139px;
+  height: 139px;
+  right: 0;
+  animation-delay: -1.5s;
+}
 
-    .heartburst {
-      position:fixed;
-      pointer-events:none;
-      z-index:10;
-      left:var(--x);
-      top:var(--y);
-      font-size:var(--s);
-      animation:floatHeart var(--duration) ease-out forwards;
-    }
-    @keyframes floatHeart {
-      from { opacity:1; transform:translate(-50%,-50%) rotate(0) scale(.6) }
-      to { opacity:0; transform:translate(calc(-50% + var(--dx)),calc(-50% - 230px)) rotate(var(--turn)) scale(1.15) }
-    }
-    @keyframes pageFloat {
-      0%,100% { transform:translateY(0) }
-      50% { transform:translateY(-5px) }
-    }
+.personaje.centro {
+  width: 165px;
+  height: 165px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+  background: #352340;
+  border: 4px solid #e8afe6;
+  box-shadow: 0 0 24px #ea8fef66;
+}
 
-    .footer {
-      font-size:11px;
-      color:#a783b6;
-      letter-spacing:.09em;
-      text-align:center;
-    }
+.personaje.centro:hover {
+  filter: drop-shadow(0 0 20px #ffb4eb);
+  scale: 1.05;
+}
 
+@keyframes volar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -9px; }
+}
 
-    /* Personajes ilustrados recortados de la misma imagen enviada */
-    .kuromi-gallery {
-      position:relative; width:min(100%,420px); height:166px;
-      margin:0 auto 6px; display:flex; justify-content:center; align-items:center;
-    }
-    .kuromi-face {
-      position:absolute; width:135px; aspect-ratio:1; object-fit:contain;
-      filter:drop-shadow(0 8px 14px #0008);
-      pointer-events:none; animation:floatSticker 4.6s ease-in-out infinite;
-    }
-    .kuromi-face--left { left:0; transform:rotate(-12deg); animation-delay:-.9s; }
-    .kuromi-face--right { right:0; transform:rotate(12deg); animation-delay:-2.1s; }
-    .kuromi-portrait {
-      position:relative; z-index:1; border:3px solid #f7b8e8;
-      background:linear-gradient(135deg,#3c254d,#201429);
-      border-radius:50%; width:158px; height:158px; padding:5px;
-      box-shadow:0 0 0 6px #edbff21a, 0 15px 35px #0009, 0 0 30px #f19cdf5b;
-      transition:transform .28s,box-shadow .28s;
-    }
-    .kuromi-portrait:hover { transform:scale(1.07) rotate(-4deg); box-shadow:0 0 0 8px #edbff228,0 18px 37px #000a,0 0 37px #e997ec80; }
-    .kuromi-portrait:active { transform:scale(.96); }
-    .kuromi-portrait img { width:100%;height:100%;object-fit:cover;border-radius:50%;display:block; }
-    .kuromi-portrait::after {
-      content:'♥'; position:absolute; right:-15px;top:4px; width:33px;height:33px;
-      border-radius:50%;display:grid;place-items:center;background:#1b1129;
-      color:#ffc5e9;border:2px solid #e4a5e7; box-shadow:0 4px 12px #0007;
-      font-size:20px;
-    }
-    .tap-sticker {
-      position:absolute; left:50%;bottom:-13px;transform:translateX(-50%);
-      white-space:nowrap;font-size:10px;letter-spacing:.09em;font-weight:700;
-      border-radius:999px;padding:6px 12px;color:#29152e;
-      background:#ffe0f5; box-shadow:0 3px 10px #0005;
-    }
-    .kuromi-secret { min-height:18px;margin:0 0 10px;color:#eecbf9;font-size:12px;letter-spacing:.05em; }
-    .kuromi-gallery .mini-spark {
-      position:absolute;color:#ffcbfa;text-shadow:0 0 14px #ffa9d9;font-size:20px;
-      animation:twinkle 3.6s ease-in-out infinite alternate;
-    }
-    .mini-spark.one {left:6%;top:5%;}.mini-spark.two {right:5%;top:18%;animation-delay:-1s;}
-    .mini-spark.three {right:30%;bottom:5%;animation-delay:-2s;}
-    @keyframes floatSticker {
-      0%,100% { translate:0 0; }
-      50% { translate:0 -8px; }
-    }
-    .letter-mini-face { width:40px;height:40px; object-fit:cover;border-radius:50%;border:2px solid #ffccf2;box-shadow:0 4px 15px #0006; }
-    .letter-signature { display:flex;align-items:center;justify-content:center;gap:10px; }
-    @media (max-width:600px) {
-      .kuromi-gallery { width:min(100%,310px);height:134px;margin-bottom:10px; }
-      .kuromi-face {width:101px;}
-      .kuromi-portrait {width:126px;height:126px;}
-      .tap-sticker {font-size:9px;}
-    }
-    @media(max-width:600px) {
-      .app { padding:25px 12px 32px; place-items:start center; }
-      h1 { font-size:63px; }
-      .page-shell { width:min(100%,480px); }
-      .message-layer { inset:21% 16% 17%; }
-      .message { font-size:clamp(13px,3.7vw,17px); line-height:1.6; }
-      .letter-tools { padding-inline:5px; }
-      .kuromi-tags { gap:8px; }
-      .kuromi-tags span { font-size:11px; }
-      .ear { width:68px; height:68px; }
-    }
-    @media(max-width:380px) {
-      .mini-label { font-size:10px; }
-      h1 { font-size:54px; }
-      .subtitle { font-size:12px }
-      .seal { width:58px; height:58px; font-size:22px }
-      .letter-peek span { font-size:25px }
-    }
-    @media(prefers-reduced-motion:reduce) {
-      *,*::before,*::after {
-        animation-duration:.01ms!important;
-        transition-duration:.01ms!important;
-        scroll-behavior:auto!important;
-      }
-    }
-  </style>
+.pista {
+  font-size: 12px;
+  color: #f9cbea;
+  min-height: 19px;
+  margin: 4px auto 10px;
+}
+
+.mini {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .29em;
+  font-weight: 700;
+  color: #f0bdf3;
+}
+
+/* SOBRE INTERACTIVO */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
+}
+
+.abrir-sobre {
+  border: 0;
+  background: transparent;
+  display: block;
+  width: min(89vw, 430px);
+  margin: 12px auto 2px;
+  padding: 28px 15px 30px;
+  transition: transform .35s;
+  filter: drop-shadow(0 22px 20px #0009);
+}
+
+.abrir-sobre:hover {
+  transform: translateY(-7px) rotate(-1deg);
+}
+
+.sobre {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.63;
+  background: #ba8bca;
+  border-radius: 12px;
+}
+
+.papel-asomado {
+  position: absolute;
+  top: -13%;
+  left: 14%;
+  width: 72%;
+  height: 83%;
+  background: #fff1fd;
+  border: 5px solid #d9b3f2;
+  border-radius: 9px;
+  color: #be75ae;
+  font-size: 25px;
+  padding-top: 19px;
+  transition: transform .3s;
+}
+
+.abrir-sobre:hover .papel-asomado {
+  transform: translateY(-18px);
+}
+
+.frente {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #b883c6, #f7c3e9);
+  clip-path: polygon(0 0, 50% 53%, 100% 0, 100% 100%, 0 100%);
+  border-radius: 11px;
+}
+
+.base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, #e4a9df, #f8cbe8);
+  clip-path: polygon(0 100%, 50% 43%, 100% 100%);
+  border-radius: 11px;
+}
+
+.solapa {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#f4caee, #b38acb);
+  clip-path: polygon(0 0, 100% 0, 50% 57%);
+  border-radius: 11px;
+}
+
+.sello {
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  width: 69px;
+  height: 69px;
+  border: 4px solid #ffe0f2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ffd4ef, #d672b8);
+  display: grid;
+  place-items: center;
+  color: #39203f;
+  font-size: 29px;
+  box-shadow: 0 5px 14px #633b6999;
+}
+
+.cinta {
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%) rotate(-3deg);
+  padding: 8px 19px;
+  background: #1c1027;
+  border-radius: 5px;
+  color: #ffd0f1;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.boton-ayuda {
+  display: inline-block;
+  background: #f4bedf;
+  color: #492952;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 11px 19px;
+  border-radius: 40px;
+  margin-top: 10px;
+}
+
+.pie {
+  font-size: 12px;
+  color: #bf9bcb;
+  margin: 14px;
+}
+
+/* CARTA ABIERTA */
+
+.herramientas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: min(100%, 530px);
+  margin: 0 auto 13px;
+}
+
+.volver {
+  color: #fff4ff;
+  background: #ffffff15;
+  border: 1px solid #f4d1fd55;
+  border-radius: 28px;
+  padding: 10px 15px;
+  font-size: 13px;
+}
+
+.herramientas span {
+  font-size: 11px;
+  color: #f7d7ff;
+  letter-spacing: .15em;
+}
+
+.hoja {
+  position: relative;
+  width: min(100%, 530px);
+  aspect-ratio: 561/701;
+  margin: auto;
+  box-shadow: 0 27px 60px #0009;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff8ff;
+  animation: hoja 5s ease-in-out infinite;
+}
+
+@keyframes hoja {
+  50% { transform: translateY(-6px); }
+}
+
+.fondo-hoja {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.texto-carta {
+  position: absolute;
+  inset: 21% 15% 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  scrollbar-width: thin;
+  color: #583457;
+}
+
+.texto-carta p {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(13px, 2.5vw, 19px);
+  line-height: 1.75;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  max-height: 100%;
+  font-style: italic;
+}
+
+.firma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  color: #d7b5e3;
+  font-size: 13px;
+}
+
+.firma img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* CORAZONES ANIMADOS */
+
+.corazon {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99;
+  left: var(--x);
+  top: var(--y);
+  font-size: var(--size);
+  color: #ffc4ed;
+  animation: subir var(--dur) ease-out forwards;
+}
+
+@keyframes subir {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(.6);
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), -240px) rotate(32deg);
+  }
+}
+
+@media(max-width:440px) {
+  .personajes { height: 135px; }
+  .personaje.izquierda,
+  .personaje.derecha { width: 99px; height: 99px; }
+  .personaje.centro { width: 127px; height: 127px; }
+  .etiquetas span { font-size: 10px; }
+  .texto-carta p { line-height: 1.5; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *:before, *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
 </head>
+
 <body>
-  <div class="spark" aria-hidden="true">✦</div>
-  <div class="spark" aria-hidden="true">✧</div>
-  <div class="spark" aria-hidden="true">♡</div>
-  <div class="spark" aria-hidden="true">☾</div>
-  <div class="spark" aria-hidden="true">🎀</div>
-  <div class="spark" aria-hidden="true">🖤</div>
+<main>
 
-  <main class="app">
-    <section id="intro" class="view intro" aria-labelledby="intro-title">
-      <div class="kuromi-gallery" aria-label="Tres ilustraciones de Kuromi tomadas de la imagen de la carta">
-        <span class="mini-spark one" aria-hidden="true">✦</span>
-        <span class="mini-spark two" aria-hidden="true">♡</span>
-        <span class="mini-spark three" aria-hidden="true">✧</span>
-        <img class="kuromi-face kuromi-face--left" src="assets/kuromi-guinando.png" alt="" aria-hidden="true">
-        <button class="kuromi-portrait" type="button" id="kuromiBtn" aria-label="Toca a Kuromi para ver una pequeña sorpresa">
-          <img src="assets/kuromi-corazon.png" alt="Kuromi con su gorro negro, calaverita rosa y moño violeta">
-          <span class="tap-sticker">Tócame ♡</span>
-        </button>
-        <img class="kuromi-face kuromi-face--right" src="assets/kuromi-dulce.png" alt="" aria-hidden="true">
-      </div>
-      <p class="kuromi-secret" id="kuromiSecret" aria-live="polite">🎀 Una sorpresa traviesa te espera...</p>
-      <div class="hero-badge">🖤 KUROMI • dulce, rebelde y kawaii 💜</div>
-      <p class="mini-label">✦ una sorpresa muy especial ✦</p>
-      <h1 id="intro-title">Una cartita para ti ♡</h1>
-      <p class="subtitle">Entre moños, calaveritas rosas y estrellas, hay algo especial para ti.</p>
+<!-- PORTADA DE KUROMI -->
 
-      <div class="kuromi-tags" aria-hidden="true">
-        <span>🎀 moños</span>
-        <span>☠ calaverita cute</span>
-        <span>🖤 estilo gótico kawaii</span>
-        <span>💜 negro + rosa + lila</span>
-      </div>
+<section id="portada" class="pantalla">
 
-      <button class="envelope-button" id="openBtn" type="button" aria-label="Abrir la carta">
-        <span class="envelope" aria-hidden="true">
-          <span class="kuromi-ears"><span class="ear left"></span><span class="ear right"></span></span>
-          <span class="envelope-back"></span>
-          <span class="letter-peek"><span>☾ ♡ ✧ ☠</span></span>
-          <span class="skull-accent">☠</span>
-          <span class="envelope-front"></span>
-          <span class="envelope-bottom"></span>
-          <span class="flap"></span>
-          <span class="seal">☠</span>
-          <span class="tape">✧ PARA TI ✧</span>
-        </span>
-      </button>
+  <div class="personajes">
+    <img class="personaje izquierda"
+         src="kuromi-guinando.png"
+         alt="Kuromi guiñando un ojo">
 
-      <span class="open-cta" aria-hidden="true">♡ Toca el sobre para abrir ♡</span>
-      <p class="tiny-note">Edición Kuromi vibes • ternura + travesura + corazones</p>
-    </section>
+    <img class="personaje centro"
+         src="kuromi-corazon.png"
+         alt="Kuromi con un corazón"
+         id="kuromi">
 
-    <section id="letterView" class="view letter-view" aria-label="Carta decorada">
-      <div class="letter-tools">
-        <button class="back" type="button" id="closeBtn">← Volver al sobre</button>
-        <span class="letter-caption">☾ Kuromi vibes ✦</span>
-      </div>
+    <img class="personaje derecha"
+         src="kuromi-dulce.png"
+         alt="Kuromi tierna">
+  </div>
 
-      <div class="page-shell">
-        <img class="page-art" src="assets/papel-kuromi.webp" alt="Marco de carta kawaii de Kuromi en tonos rosados, negros y lilas, decorado con lazos, corazones y estrellas" />
-        <div class="message-layer"><p id="letterMessage" class="message placeholder"></p></div>
-      </div>
+  <p class="pista" id="pista">
+    ♡ Toca a Kuromi para recibir un guiño ♡
+  </p>
 
-      <div class="quote-ribbon" aria-hidden="true">
-        <span>♡ cute but mischievous</span>
-        <span>☠ bow + skull aesthetic</span>
-        <span>🎀 sweet punk energy</span>
-      </div>
+  <span class="distintivo">
+    🖤 KUROMI • dulce, rebelde y kawaii 💜
+  </span>
 
-      <p class="footer letter-signature"><img src="assets/kuromi-guinando.png" class="letter-mini-face" alt="Kuromi guiñando un ojo"> ♡ Hecho con cariño ♡</p>
-    </section>
-  </main>
+  <p class="mini">✦ Una sorpresa muy especial ✦</p>
 
-  <script>
-    /* ======================================================
-       CUANDO TENGAS EL TEXTO DE LA CARTA, PÉGALO AQUÍ.
-       Respeta las comillas invertidas (`) que lo rodean.
-       Los saltos de línea se conservan automáticamente.
-       ====================================================== */
-    const TEXTO_DE_LA_CARTA = `Aquí aparecerá tu mensaje especial ♡`;
+  <h1 class="titulo">Una cartita para ti ♡</h1>
 
-    const intro = document.getElementById('intro');
-    const letterView = document.getElementById('letterView');
-    const message = document.getElementById('letterMessage');
-    message.textContent = TEXTO_DE_LA_CARTA.trim();
+  <p class="subtitulo">
+    Entre moños, calaveritas rosas y estrellas,
+    hay algo especial para ti.
+  </p>
 
-    const isPlaceholder = TEXTO_DE_LA_CARTA.trim() === 'Aquí aparecerá tu mensaje especial ♡';
-    message.classList.toggle('placeholder', isPlaceholder);
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  <div class="etiquetas">
+    <span>🎀 moños</span>
+    <span>☠ calaverita cute</span>
+    <span>🖤 gótico kawaii</span>
+    <span>💜 negro + rosa + lila</span>
+  </div>
 
-    function shower() {
-      if (reduceMotion) return;
-      const symbols = ['♡','♥','✦','✧','⋆','☾','☠','🎀','🖤'];
-      for (let i = 0; i < 24; i++) {
-        const el = document.createElement('span');
-        el.className = 'heartburst';
-        el.setAttribute('aria-hidden','true');
-        el.textContent = symbols[i % symbols.length];
-        el.style.setProperty('--x', (20 + Math.random() * 60) + 'vw');
-        el.style.setProperty('--y', (55 + Math.random() * 35) + 'vh');
-        el.style.setProperty('--dx', (Math.random() * 240 - 120) + 'px');
-        el.style.setProperty('--turn', (Math.random() * 110 - 55) + 'deg');
-        el.style.setProperty('--s', (15 + Math.random() * 20) + 'px');
-        el.style.setProperty('--duration', (1.3 + Math.random() * 1.1) + 's');
-        el.style.color = i % 3 === 0 ? '#fcb7e8' : (i % 3 === 1 ? '#dcb3ff' : '#ffffff');
-        document.body.appendChild(el);
-        el.addEventListener('animationend', () => el.remove(), { once:true });
-      }
-    }
+  <!-- SOBRE -->
 
-    document.getElementById('kuromiBtn').addEventListener('click', () => {
-      document.getElementById('kuromiSecret').textContent = '🖤 ¡Kuromi te manda un guiño! Ahora abre tu cartita ♡';
-      shower();
-    });
+  <button class="abrir-sobre" type="button"
+          id="abrir" aria-label="Abrir la carta">
 
-    document.getElementById('openBtn').addEventListener('click', () => {
-      intro.classList.add('hidden');
-      letterView.classList.add('visible');
-      window.scrollTo({ top:0, behavior:'smooth' });
-      shower();
-      document.getElementById('closeBtn').focus({ preventScroll:true });
-    });
+    <span class="sobre">
+      <span class="papel-asomado">☾ ♡ ✧ ☠</span>
+      <span class="frente"></span>
+      <span class="base"></span>
+      <span class="solapa"></span>
+      <span class="sello">☠</span>
+      <span class="cinta">✧ PARA TI ✧</span>
+    </span>
 
-    document.getElementById('closeBtn').addEventListener('click', () => {
-      letterView.classList.remove('visible');
-      intro.classList.remove('hidden');
-      window.scrollTo({ top:0, behavior:'smooth' });
-      document.getElementById('openBtn').focus({ preventScroll:true });
-    });
-  </script>
+  </button>
+
+  <span class="boton-ayuda">
+    ♡ Toca el sobre para abrir ♡
+  </span>
+
+  <p class="pie">
+    Edición Kuromi • ternura + travesura + corazones
+  </p>
+
+</section>
+
+<!-- CARTA ABIERTA -->
+
+<section id="carta" class="pantalla" hidden>
+
+  <div class="herramientas">
+    <button class="volver" id="volver" type="button">
+      ← Volver al sobre
+    </button>
+    <span>☾ KUROMI VIBES ✦</span>
+  </div>
+
+  <div class="hoja">
+
+    <img class="fondo-hoja"
+         src="papel-kuromi.webp"
+         alt="Papel decorado con Kuromi, lazos lilas y corazones">
+
+    <div class="texto-carta">
+      <p id="mensaje"></p>
+    </div>
+
+  </div>
+
+  <p class="firma">
+    <img src="kuromi-guinando.png" alt="Kuromi">
+    ♡ Hecho con cariño ♡
+  </p>
+
+</section>
+</main>
+
+<script>
+
+// AQUÍ ESCRIBIREMOS TU MENSAJE CUANDO ME LO ENVÍES:
+const TEXTO_DE_LA_CARTA = `Aquí aparecerá tu mensaje especial ♡`;
+
+const portada = document.getElementById('portada');
+const carta = document.getElementById('carta');
+
+document.getElementById('mensaje').textContent =
+  TEXTO_DE_LA_CARTA;
+
+// ANIMACIÓN DE CORAZONES
+
+function corazones() {
+
+  if (window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches) return;
+
+  const simbolos = ['♡','♥','✦','☾','🎀','💜'];
+
+  for (let i = 0; i < 18; i++) {
+
+    const e = document.createElement('span');
+    e.className = 'corazon';
+    e.textContent = simbolos[i % simbolos.length];
+
+    e.style.setProperty('--x',
+      (20 + Math.random() * 60) + 'vw');
+
+    e.style.setProperty('--y',
+      (48 + Math.random() * 35) + 'vh');
+
+    e.style.setProperty('--size',
+      (17 + Math.random() * 17) + 'px');
+
+    e.style.setProperty('--dx',
+      (Math.random() * 200 - 100) + 'px');
+
+    e.style.setProperty('--dur',
+      (1.3 + Math.random()) + 's');
+
+    document.body.appendChild(e);
+
+    e.addEventListener('animationend',
+      () => e.remove(), {once:true});
+  }
+}
+
+// TOCAR A KUROMI
+
+document.getElementById('kuromi')
+  .addEventListener('click', () => {
+
+    document.getElementById('pista').textContent =
+      '🖤 ¡Kuromi te manda un guiño! Abre la carta ♡';
+
+    corazones();
+  });
+
+// ABRIR CARTA
+
+document.getElementById('abrir')
+  .addEventListener('click', () => {
+
+    portada.hidden = true;
+    carta.hidden = false;
+
+    window.scrollTo(0, 0);
+    corazones();
+  });
+
+// VOLVER AL SOBRE
+
+document.getElementById('volver')
+  .addEventListener('click', () => {
+
+    carta.hidden = true;
+    portada.hidden = false;
+
+    window.scrollTo(0, 0);
+  });
+
+</script>
 </body>
 </html>

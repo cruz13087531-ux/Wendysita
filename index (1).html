@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Una cartita para ti ♡ | Kuromi</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Italianno&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rosa:#ffbee8;
+  --rosa2:#ef9ed0;
+  --rosa3:#ffd9f3;
+  --lila:#cfabff;
+  --lila2:#a978df;
+  --oscuro:#201228;
+  --oscuro2:#170d21;
+  --blanco:#fff8ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:#fff;
+  text-align:center;
+  font-family:'DM Sans',sans-serif;
+  background:
+    radial-gradient(circle at 50% 16%,#6b4484 0%,#462760 18%,#281636 50%,#170d21 100%);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.42;
+  background-image:
+    radial-gradient(#ffc7ec 1.5px,transparent 2px),
+    radial-gradient(#d8b9ff 1.2px,transparent 2px),
+    radial-gradient(#ffffff 1px,transparent 2px),
+    radial-gradient(#ff9fd8 1.2px,transparent 2px);
+  background-size:145px 160px,230px 195px,190px 210px,250px 240px;
+  background-position:20px 40px,90px 75px,30px 10px,120px 120px;
+  animation:cielo 24s linear infinite;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(transparent 0 96%,#ffffff06 96% 100%),linear-gradient(90deg,transparent 0 96%,#ffffff05 96% 100%);
+  background-size:24px 24px;
+  mask-image:radial-gradient(circle at center, black 20%, transparent 85%);
+  opacity:.15;
+}
+@keyframes cielo{to{background-position:170px 200px,-140px 270px,10px 220px,40px -200px}}
+main{position:relative;min-height:100svh;display:grid;place-items:center;padding:30px 14px 115px}
+.pantalla{width:min(100%,940px);animation:entrada .7s both}
+[hidden]{display:none!important}
+@keyframes entrada{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.titulo{font:400 clamp(64px,9vw,102px)/1.02 'Italianno',cursive;margin:14px 0 8px;text-shadow:0 5px 22px #f9a4e099}
+.subtitulo{font-size:15px;color:#f4e5f5;margin:8px auto 16px;max-width:700px;line-height:1.7}
+.distintivo{display:inline-block;border:1px solid #f0c4ff7d;border-radius:100px;padding:10px 18px;background:linear-gradient(180deg,#ffffff1c,#ffffff10);color:#f8dfff;font-size:12px;font-weight:700;letter-spacing:.04em;margin:8px 0 12px;box-shadow:0 10px 26px #00000020,inset 0 1px 0 #ffffff18}
+.quote-hero{
+  position:relative;
+  margin:8px auto 16px;
+  max-width:770px;
+  padding:28px 22px 24px;
+  background:linear-gradient(180deg,#ffffff18,#ffffff0d);
+  border:1px solid #f0c6ff55;
+  border-radius:30px;
+  box-shadow:0 18px 38px #00000025,inset 0 1px 0 #ffffff25,0 0 0 1px #ffffff08;
+  backdrop-filter:blur(10px);
+  overflow:hidden;
+}
+.quote-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 0%,#ffbef140,transparent 45%),radial-gradient(circle at 50% 100%,#c9a6ff25,transparent 50%);
+  pointer-events:none;
+}
+.quote-label{
+  display:inline-block;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  font-weight:800;
+  color:#ffd1f6;
+  margin-bottom:12px;
+}
+.quote-main{
+  position:relative;
+  z-index:1;
+  margin:0 auto;
+  max-width:600px;
+  color:#fff8ff;
+  font-size:clamp(19px,2.8vw,31px);
+  line-height:1.48;
+  font-weight:800;
+  text-shadow:0 2px 14px #00000044;
+  white-space:pre-line;
+}
+.quote-main strong{color:#ffd3f2}
+.quote-kus{position:absolute;inset:0;pointer-events:none}
+.quote-kus img{position:absolute;object-fit:contain;filter:drop-shadow(0 10px 14px #0007);animation:floaty 4.8s ease-in-out infinite}
+.quote-kus .q1{width:86px;height:86px;left:14px;top:12px;transform:rotate(-12deg)}
+.quote-kus .q2{width:86px;height:86px;right:14px;top:12px;animation-delay:-1.5s}
+.quote-kus .q3{width:76px;height:76px;left:52px;bottom:12px;animation-delay:-.9s}
+.quote-kus .q4{width:76px;height:76px;right:52px;bottom:12px;animation-delay:-2.2s}
+.sparkle-row{margin-top:12px;color:#fcdfff;font-size:15px;letter-spacing:.3em}
+.mini{font-size:11px;text-transform:uppercase;letter-spacing:.30em;font-weight:800;color:#f0bdf3;margin-top:6px}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid white;outline-offset:5px}
+.personajes{position:relative;width:min(96vw,740px);height:250px;margin:0 auto 2px}
+.personaje{position:absolute;object-fit:contain;filter:drop-shadow(0 10px 14px #0009);animation:floaty 4.4s ease-in-out infinite}
+.personaje.izquierda{width:150px;height:150px;left:20px;top:62px;transform:rotate(-10deg)}
+.personaje.derecha{width:150px;height:150px;right:20px;top:62px;animation-delay:-1.3s}
+.personaje.centro{width:180px;height:180px;left:50%;top:18px;transform:translateX(-50%);z-index:3;cursor:pointer;border-radius:50%;padding:10px;background:#352340;border:4px solid #e8afe6;box-shadow:0 0 26px #ea8fef70, 0 0 0 7px #ffffff12}
+.personaje.top-left{width:88px;height:88px;left:110px;top:4px;animation-delay:-.5s;opacity:.98}
+.personaje.top-right{width:88px;height:88px;right:110px;top:4px;animation-delay:-2.1s;opacity:.98}
+.personaje.bottom-left{width:112px;height:112px;left:88px;bottom:6px;animation-delay:-1.1s}
+.personaje.bottom-right{width:112px;height:112px;right:88px;bottom:6px;animation-delay:-1.8s}
+.personaje.side-mini-left{width:70px;height:70px;left:0;top:18px;animation-delay:-2.3s}
+.personaje.side-mini-right{width:70px;height:70px;right:0;top:18px;animation-delay:-.7s}
+.personaje.centro:hover{filter:drop-shadow(0 0 24px #ffb4eb);scale:1.05}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.pista{font-size:13px;color:#fce0ef;min-height:22px;margin:4px auto 10px;font-weight:500}
+.abrir-sobre{border:0;background:transparent;display:block;width:min(89vw,450px);margin:18px auto 2px;padding:28px 15px 30px;transition:transform .35s;filter:drop-shadow(0 24px 22px #0009)}
+.abrir-sobre:hover{transform:translateY(-7px) rotate(-1deg)}
+.sobre{position:relative;display:block;width:100%;aspect-ratio:1.63;background:#ba8bca;border-radius:16px;box-shadow:inset 0 3px 20px #ffffff14}
+.papel-asomado{position:absolute;top:-13%;left:14%;width:72%;height:83%;background:#fff1fd;border:5px solid #d9b3f2;border-radius:9px;color:#be75ae;font-size:25px;padding-top:19px;transition:transform .3s;box-shadow:inset 0 0 16px #dcb8ee88}
+.abrir-sobre:hover .papel-asomado{transform:translateY(-18px)}
+.frente{position:absolute;inset:0;background:linear-gradient(135deg,#c28dd2,#f6c5e8);clip-path:polygon(0 0,50% 53%,100% 0,100% 100%,0 100%);border-radius:14px}
+.base{position:absolute;inset:0;background:linear-gradient(155deg,#e7b2e1,#ffd9ee);clip-path:polygon(0 100%,50% 43%,100% 100%);border-radius:14px}
+.solapa{position:absolute;inset:0;background:linear-gradient(#f8d5f2,#b68ecc);clip-path:polygon(0 0,100% 0,50% 57%);border-radius:14px}
+.sello{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);width:78px;height:78px;border:4px solid #ffe5f4;border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffd7f0,#d672b8);display:grid;place-items:center;color:#39203f;font-size:30px;box-shadow:0 5px 18px #633b6999,0 0 0 8px #ffffff18}
+.cinta{position:absolute;left:50%;bottom:-15px;transform:translateX(-50%) rotate(-3deg);padding:8px 20px;background:#1c1027;border-radius:5px;color:#ffd0f1;font-size:13px;white-space:nowrap;box-shadow:0 6px 12px #00000035}
+.boton-ayuda{display:inline-block;background:linear-gradient(180deg,#f8cbe8,#efb8df);color:#492952;font-size:16px;font-weight:800;padding:14px 24px;border-radius:999px;margin-top:12px;box-shadow:0 12px 26px #00000024}
+.pie{font-size:12px;color:#cfb0da;margin:14px}
+.herramientas{display:flex;align-items:center;justify-content:space-between;gap:8px;width:min(100%,610px);margin:0 auto 13px}
+.volver{color:#fff4ff;background:#ffffff15;border:1px solid #f4d1fd55;border-radius:28px;padding:10px 15px;font-size:13px}
+.herramientas span{font-size:11px;color:#f7d7ff;letter-spacing:.15em;font-weight:700}
+.hoja-wrap{position:relative;width:min(100%,710px);margin:auto}
+.decor-side{position:absolute;top:16%;width:118px;display:flex;flex-direction:column;gap:14px;pointer-events:none}
+.decor-side.left{left:-40px}.decor-side.right{right:-40px}
+.decor-side img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 10px 12px #0007);animation:floaty 4.2s ease-in-out infinite}
+.decor-side img:nth-child(2){animation-delay:-1.5s}
+.decor-top{position:absolute;top:-22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;pointer-events:none}
+.decor-top img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 8px 10px #0007);animation:floaty 4.2s ease-in-out infinite}
+.decor-top img:nth-child(2){animation-delay:-1s}.decor-top img:nth-child(3){animation-delay:-2s}
+.hoja{position:relative;width:min(100%,590px);aspect-ratio:561/701;margin:auto;box-shadow:0 28px 60px #0009,0 0 0 1px #ffffff12;border-radius:14px;overflow:hidden;background:#fff8ff;animation:hoja 5s ease-in-out infinite}
+@keyframes hoja{50%{transform:translateY(-6px)}}
+.fondo-hoja{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.texto-carta{position:absolute;inset:20% 12.5% 14.5%;display:flex;align-items:flex-start;justify-content:center;overflow:auto;scrollbar-width:thin;color:#583457;padding:4px 8px 6px}
+.texto-carta p{margin:0;font-family:Georgia,serif;font-size:clamp(13px,2.2vw,18px);line-height:1.7;white-space:pre-line;overflow-wrap:anywhere;text-align:left;max-height:100%}
+.firma{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:15px;color:#e1c3eb;font-size:13px}
+.firma img{width:46px;height:46px;object-fit:contain}
+.corazon{position:fixed;pointer-events:none;z-index:99;left:var(--x);top:var(--y);font-size:var(--size);color:#ffc4ed;animation:subir var(--dur) ease-out forwards}
+@keyframes subir{from{opacity:1;transform:translate(-50%,-50%) scale(.6)}to{opacity:0;transform:translate(calc(-50% + var(--dx)),-240px) rotate(32deg)}}
+@media(max-width:820px){
+  .quote-kus .q3,.quote-kus .q4{display:none}
+  .decor-side{display:none}
+}
+@media(max-width:720px){
+  .personajes{height:270px}
+  .personaje.top-left{left:36px}
+  .personaje.top-right{right:36px}
+  .personaje.bottom-left{left:12px}
+  .personaje.bottom-right{right:12px}
+  .personaje.side-mini-left,.personaje.side-mini-right{display:none}
+}
+@media(max-width:520px){
+  .quote-hero{padding:22px 16px 18px;border-radius:24px}
+  .quote-main{font-size:20px;max-width:330px}
+  .quote-kus .q1,.quote-kus .q2{width:62px;height:62px;top:10px}
+  .quote-kus .q3,.quote-kus .q4{display:none}
+}
+@media(max-width:440px){
+  .personajes{height:248px;width:min(96vw,360px)}
+  .personaje.izquierda,.personaje.derecha{width:100px;height:100px;top:74px}
+  .personaje.centro{width:126px;height:126px;top:24px}
+  .personaje.top-left,.personaje.top-right{width:62px;height:62px;top:0}
+  .personaje.bottom-left,.personaje.bottom-right{width:76px;height:76px;bottom:8px}
+  .personaje.izquierda{left:0}.personaje.derecha{right:0}
+  .personaje.top-left{left:34px}.personaje.top-right{right:34px}
+  .personaje.bottom-left{left:8px}.personaje.bottom-right{right:8px}
+  .subtitulo{font-size:14px}
+  .texto-carta{inset:20% 12.5% 14.5%}
+  .texto-carta p{line-height:1.55;font-size:13.2px}
+  .decor-top img{width:54px;height:54px}
+}
+
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<section id="portada" class="pantalla">
+  <div class="quote-hero">
+    <div class="quote-kus" aria-hidden="true">
+      <img class="q1" src="kuromi-guinando.png" alt="">
+      <img class="q2" src="kuromi-dulce.png" alt="">
+      <img class="q3" src="kuromi-corazon.png" alt="">
+      <img class="q4" src="kuromi-guinando.png" alt="">
+    </div>
+    <span class="quote-label">✦ un pedacito de canción ✦</span>
+    <p class="quote-main">"Y es verdad
+Destrozas gramo a gramo el dolor
+Silencias a ese mal narrador
+Me ilumino, aunque solo un momento.."</p>
+    <div class="sparkle-row">♡ ✦ ☾ ✦ ♡</div>
+  </div>
+
+  <div class="personajes">
+    <img class="personaje side-mini-left" src="kuromi-dulce.png" alt="Kuromi decorativa">
+    <img class="personaje side-mini-right" src="kuromi-corazon.png" alt="Kuromi decorativa">
+    <img class="personaje top-left" src="kuromi-dulce.png" alt="Kuromi dulce decorativa">
+    <img class="personaje top-right" src="kuromi-guinando.png" alt="Kuromi guiñando decorativa">
+    <img class="personaje izquierda" src="kuromi-guinando.png" alt="Kuromi guiñando un ojo">
+    <img class="personaje centro" src="kuromi-corazon.png" alt="Kuromi con un corazón" id="kuromi">
+    <img class="personaje derecha" src="kuromi-dulce.png" alt="Kuromi tierna">
+    <img class="personaje bottom-left" src="kuromi-corazon.png" alt="Kuromi con corazón decorativa">
+    <img class="personaje bottom-right" src="kuromi-dulce.png" alt="Kuromi decorativa">
+  </div>
+
+  <p class="pista" id="pista">♡ Toca a Kuromi para recibir un guiño ♡</p>
+  <span class="distintivo">🖤 KUROMI • dulce, rebelde y kawaii 💜</span>
+  <p class="mini">✦ Una sorpresa muy especial ✦</p>
+  <h1 class="titulo">Una cartita para ti ♡</h1>
+  <p class="subtitulo">Entre moños, calaveritas rosas, corazones y estrellas, hay algo especial para ti. Más Kuromis, más detalles lindos y una carta hecha con muchísimo amor.</p>
+
+  <button class="abrir-sobre" type="button" id="abrir" aria-label="Abrir la carta">
+    <span class="sobre">
+      <span class="papel-asomado">☾ ♡ ✧ ☠</span>
+      <span class="frente"></span>
+      <span class="base"></span>
+      <span class="solapa"></span>
+      <span class="sello">☠</span>
+      <span class="cinta">✧ PARA TI ✧</span>
+    </span>
+  </button>
+  <span class="boton-ayuda">♡ Toca el sobre para abrir ♡</span>
+  <p class="pie">Edición Kuromi • ternura + travesura + corazones</p>
+</section>
+
+<section id="carta" class="pantalla" hidden>
+  <div class="herramientas">
+    <button class="volver" id="volver" type="button">← Volver al sobre</button>
+    <span>☾ KUROMI VIBES ✦</span>
+  </div>
+  <div class="hoja-wrap">
+    <div class="decor-top" aria-hidden="true">
+      <img src="kuromi-corazon.png" alt="">
+      <img src="kuromi-guinando.png" alt="">
+      <img src="kuromi-dulce.png" alt="">
+    </div>
+    <div class="decor-side left" aria-hidden="true">
+      <img src="kuromi-guinando.png" alt="">
+      <img src="kuromi-dulce.png" alt="">
+      <img src="kuromi-corazon.png" alt="">
+    </div>
+    <div class="decor-side right" aria-hidden="true">
+      <img src="kuromi-corazon.png" alt="">
+      <img src="kuromi-guinando.png" alt="">
+      <img src="kuromi-dulce.png" alt="">
+    </div>
+    <div class="hoja">
+      <img class="fondo-hoja" src="papel-kuromi.webp" alt="Papel decorado con Kuromi, lazos lilas y corazones">
+      <div class="texto-carta"><p id="mensaje"></p></div>
+    </div>
+  </div>
+  <p class="firma"><img src="kuromi-guinando.png" alt="Kuromi">♡ Hecho con cariño ♡</p>
+</section>
+</main>
+
+<!-- Audio de fondo, sin controles visibles -->
+<audio id="musicaFondo" preload="auto" playsinline src="05%20Mercedes.mp3#t=20"></audio>
+
+<script>
+const TEXTO_DE_LA_CARTA = `Para mi Wendy ❤️
+Gracias por todo, mi amor. La verdad, todo este tiempo que hemos estado juntos la he pasado demasiado bonito contigo. No sabes lo feliz que me hace compartir mis días contigo, salir a tu lado, reírnos por cualquier tontería y guardar tantos recuerdos que significan muchísimo para mí. Te vi y jamás imaginé que terminaría tan enamorado de ti, que me harías tan feliz o que llegaría a estar tan camote de ti. JAJAJAJA.
+Me encantas muchísimo, Wendy. Me gusta tu sonrisa, tus ojitos, tu forma de ser y cada pequeño detalle que te hace ser tú. Te extraño un montón cuando no estás conmigo y quisiera poder abrazarte, llenarte de besitos y quedarme un ratito más a tu lado. A veces escucho Especial de medianoche, de José Madero, y pienso en ti, especialmente en esa parte que habla de quedarse con un recuerdo que te haga sonreír. Porque tengo tantos recuerdos contigo que me hacen feliz, mi vida, y quisiera seguir creando muchísimos más a tu lado.
+También me gusta mucho Cursiva, porque me hace pensar en cómo a veces una canción consigue expresar sentimientos que uno no sabe cómo explicar. Y eso me pasa contigo: te amo tanto que a veces siento que las palabras no me alcanzan para decirte todo lo que significas para mí.
+Sé que no soy perfecto, mi amor, y que a veces podemos tener nuestras discusiones, pero quiero que sepas que realmente deseo solucionar las cosas contigo. No quiero que seamos perfectos, quiero que aprendamos a entendernos, a escucharnos y a mejorar juntos. Quiero estar contigo no solamente cuando todo sea bonito, sino también en los días difíciles, acompañarte cuando estés triste y hacerte sentir querida incluso cuando las cosas no salgan como esperamos.
+Gracias por estos maravillosos meses, por cada abrazo, cada risa y cada momento que me has regalado. Quiero hacerte muy feliz, demostrarte con hechos cuánto te amo y seguir construyendo algo bonito contigo. No sé todo lo que nos espera, pero sí sé que quiero seguir compartiendo mis días contigo, conociéndote y enamorándome de cada detalle tuyo.
+Te amo muchísimo, mi Wendy. Te extraño, me encantas y estoy demasiado camote de ti. JAJAJA. ❤️ Ojalá todavía nos queden muchísimas canciones que nos recuerden el uno al otro, muchos momentos que nos hagan sonreír y muchos abrazos que nos hagan olvidar por un ratito todo lo demás.
+Gracias por hacerme tan feliz, mi vida. Quiero seguir eligiéndote, cuidando lo nuestro y demostrándote que este amor que siento por ti es sincero.
+Te amo, mi Wendy, y quiero seguir escribiendo nuestra historia contigo. ❤️
+
+Con mucho amor, tu camote.`;
+const portada=document.getElementById('portada');
+const carta=document.getElementById('carta');
+document.getElementById('mensaje').textContent=TEXTO_DE_LA_CARTA;
+function corazones(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const simbolos=['♡','♥','✦','☾','🎀','💜'];for(let i=0;i<24;i++){const e=document.createElement('span');e.className='corazon';e.textContent=simbolos[i%simbolos.length];e.style.setProperty('--x',(20+Math.random()*60)+'vw');e.style.setProperty('--y',(48+Math.random()*35)+'vh');e.style.setProperty('--size',(17+Math.random()*17)+'px');e.style.setProperty('--dx',(Math.random()*220-110)+'px');e.style.setProperty('--dur',(1.3+Math.random())+'s');document.body.appendChild(e);e.addEventListener('animationend',()=>e.remove(),{once:true});}}
+document.getElementById('kuromi').addEventListener('click',()=>{document.getElementById('pista').textContent='🖤 ¡Kuromi te manda un guiño! Abre la cartita ♡';corazones();});
+document.getElementById('abrir').addEventListener('click',()=>{portada.hidden=true;carta.hidden=false;window.scrollTo(0,0);corazones();});
+document.getElementById('volver').addEventListener('click',()=>{carta.hidden=true;portada.hidden=false;window.scrollTo(0,0);});
+
+// Música de fondo: intentar empezar automáticamente desde 0:20.
+// Si el navegador bloquea autoplay con sonido, el primer toque la inicia.
+const musica = document.getElementById('musicaFondo');
+const SEGUNDO_INICIAL = 20;
+const nombresAudio = [
+  '05 Mercedes.mp3',
+  '05 Mercedes.MP3',
+  '05 Mercedes.m4a',
+  '05 Mercedes.wav',
+  '05 Mercedes.ogg',
+  '05 Mercedes'
+];
+let indiceAudio = 0;
+let inicioPreparado = false;
+
+function ajustarInicio() {
+  if (inicioPreparado) return;
+  try {
+    musica.currentTime = SEGUNDO_INICIAL;
+    inicioPreparado = true;
+  } catch (error) {
+    // Se ajustará al cargar los metadatos.
+  }
+}
+
+function intentarReproducir() {
+  if (!musica.paused) return;
+  ajustarInicio();
+  const intento = musica.play();
+  if (intento && typeof intento.catch === 'function') {
+    intento.catch(() => {
+      // El navegador puede exigir un toque del usuario para permitir sonido.
+    });
+  }
+}
+
+musica.addEventListener('loadedmetadata', () => {
+  try {
+    // Ajustar antes de que comience a escucharse, incluso con carga lenta.
+    if (musica.currentTime < SEGUNDO_INICIAL) {
+      musica.currentTime = SEGUNDO_INICIAL;
+    }
+    inicioPreparado = true;
+  } catch (error) {}
+  intentarReproducir();
+});
+
+musica.addEventListener('error', () => {
+  // Intentar otras extensiones sin mostrar controles.
+  if (indiceAudio + 1 >= nombresAudio.length) return;
+  indiceAudio++;
+  inicioPreparado = false;
+  musica.src = encodeURI(nombresAudio[indiceAudio]) + '#t=20';
+  musica.load();
+});
+
+// Sin botones, mensajes ni reproductor en la interfaz.
+document.addEventListener('pointerdown', intentarReproducir, {capture:true});
+document.addEventListener('keydown', intentarReproducir, {capture:true});
+
+ajustarInicio();
+intentarReproducir();
+
+</script>
+</body>
+</html>
